@@ -1,0 +1,64 @@
+/* Fieldnotes Studio — design system
+   Palette: ink #141414, paper #F4F1EA, chartreuse #C8F04B,
+            warm sand #E8E2D5, muted #6B675E */
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;background:#F4F1EA;color:#141414}
+button{font-family:inherit;cursor:pointer}
+.topbar{background:#141414;color:#C8F04B;text-align:center;padding:.5rem 1rem;font-size:.85rem;letter-spacing:.04em}
+header.site{background:#F4F1EA;border-bottom:2px solid #141414;position:sticky;top:0;z-index:20}
+.nav{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.9rem 1rem;gap:1rem;flex-wrap:wrap}
+.logo{font-size:1.45rem;font-weight:bold;color:#141414;text-decoration:none}
+.logo span{background:#C8F04B;padding:.05rem .35rem;border:2px solid #141414}
+.navlinks{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
+.navlinks button{background:transparent;border:2px solid transparent;padding:.45rem .7rem;font-size:.95rem}
+.navlinks button.active{border-color:#141414;background:#fff}
+.navlinks button.shortlistbtn{border-color:#141414;background:#C8F04B;font-weight:bold}
+.wrap{max-width:1120px;margin:0 auto;padding:1.5rem 1rem 3rem}
+.hero{max-width:1120px;margin:0 auto;padding:3rem 1rem 1rem}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.02;margin:.2rem 0 1rem}
+.hero h1 em{background:#C8F04B;font-style:normal;padding:0 .2rem}
+.hero p{font-size:1.15rem;max-width:640px;line-height:1.6}
+.cta{background:#141414;color:#F4F1EA;border:none;padding:.85rem 1.4rem;font-size:1rem;margin-top:.5rem}
+.cta:hover{background:#333}
+.stats{display:flex;gap:2rem;flex-wrap:wrap;margin-top:2rem;border-top:1px solid #141414;padding-top:1rem}
+.stats div{font-size:.95rem}.stats strong{display:block;font-size:1.5rem}
+.banner{background:#fff;border:1px solid #141414;padding:.8rem 1rem;font-size:.92rem;margin-bottom:1.4rem}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.8rem 0 1.2rem}
+.filters input,.filters select{padding:.55rem .7rem;border:1.5px solid #141414;background:#fff;font-family:inherit;font-size:.95rem}
+.chip{background:#fff;border:1.5px solid #141414;padding:.45rem .85rem;border-radius:999px}
+.chip.active{background:#141414;color:#C8F04B}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.4rem}
+.card{background:#fff;border:2px solid #141414;display:flex;flex-direction:column}
+.card .art{height:150px;display:flex;align-items:center;justify-content:center;font-size:3rem;font-weight:bold;letter-spacing:.05em;border-bottom:2px solid #141414}
+.card .body{padding:1rem;position:relative;flex:1;display:flex;flex-direction:column}
+.card h3{margin:.1rem 0 .4rem;font-size:1.25rem}
+.meta{color:#6B675E;font-size:.88rem}
+.card p{line-height:1.55;flex:1}
+.fav{position:absolute;top:.7rem;right:.7rem;background:#F4F1EA;border:1.5px solid #141414;border-radius:999px;width:38px;height:38px;font-size:1rem}
+.row{display:flex;gap:.5rem;flex-wrap:wrap}
+.addbtn{background:#C8F04B;border:2px solid #141414;padding:.6rem 1rem;font-weight:bold}
+.addbtn:disabled{opacity:.45;cursor:not-allowed}
+.ghost{background:#fff;border:1.5px solid #141414;padding:.6rem 1rem}
+.modalback{position:fixed;inset:0;background:rgba(20,20,20,.55);display:flex;align-items:center;justify-content:center;padding:1rem;z-index:50}
+.modal{background:#F4F1EA;border:2px solid #141414;max-width:560px;width:100%;max-height:88vh;overflow:auto;padding:1.5rem}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(380px,92vw);background:#F4F1EA;border-left:2px solid #141414;z-index:50;padding:1.2rem;overflow:auto;box-shadow:-8px 0 24px rgba(0,0,0,.2)}
+.summary div{display:flex;justify-content:space-between;padding:.35rem 0;border-bottom:1px dashed #c9c2b2}
+label{display:block;margin-top:.9rem;font-weight:bold;font-size:.95rem}
+input,select,textarea{width:100%;padding:.6rem .7rem;border:1.5px solid #141414;background:#fff;font-family:inherit;font-size:1rem;margin-top:.3rem}
+textarea{min-height:110px}
+.err{color:#A61C1C;font-size:.9rem;margin:.3rem 0 0}
+.ok{background:#fff;border:2px solid #141414;padding:1.5rem;max-width:640px}
+.faq{border:2px solid #141414;background:#fff;margin-bottom:.7rem}
+.faq button{width:100%;text-align:left;background:none;border:none;padding:1rem;font-size:1rem;font-weight:bold}
+.faq p{padding:0 1rem 1rem;line-height:1.6;margin:0}
+fieldset{border:2px solid #141414;background:#fff;padding:1rem 1.2rem 1.2rem;margin-bottom:1.2rem}
+legend{font-weight:bold;padding:0 .4rem}
+.addon{display:flex;gap:.6rem;align-items:flex-start;margin-top:.6rem;font-weight:normal}
+.addon input{width:auto;margin-top:.25rem}
+.estbox{background:#141414;color:#F4F1EA;padding:1.2rem}
+.estbox .summary div{border-color:#444}
+.estbox strong.big{font-size:1.8rem;color:#C8F04B}
+footer{background:#141414;color:#F4F1EA;padding:2rem 1rem;text-align:center;font-size:.92rem;line-height:1.6}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;align-items:start}
+.process{counter-reset:step}
+.process li{margin-bottom:1rem;line-height:1.6}
