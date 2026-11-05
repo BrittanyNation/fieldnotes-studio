@@ -62,3 +62,8 @@ footer{background:#141414;color:#F4F1EA;padding:2rem 1rem;text-align:center;font
 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;align-items:start}
 .process{counter-reset:step}
 .process li{margin-bottom:1rem;line-height:1.6}
+
+.heroimg{width:100%;height:340px;object-fit:cover;display:block;border:2px solid #141414;margin-top:2rem}
+.card .art{padding:0;overflow:hidden}
+.card .art img{width:100%;height:100%;object-fit:cover;display:block}
+.modalimg{width:100%;height:240px;object-fit:cover;display:block;border:2px solid #141414;margin-bottom:1rem}

@@ -22,15 +22,15 @@ const { useState, useEffect, useMemo } = React;
 
 /* ---- Data: the studio's portfolio, rendered by components ---------- */
 const PROJECTS = [
-  { id: "p1", name: "Fern Hollow Skincare", category: "Brand", year: 2026, hue: "#DCE8D0", initials: "FH", blurb: "A calm identity and packaging system for a small-batch skincare maker.", deliverables: ["Logo and identity", "Packaging labels", "Brand guidelines"], result: "Launch range sold out its first small batch in three weeks." },
-  { id: "p2", name: "Atlas Roast Club", category: "E-Commerce", year: 2026, hue: "#EAD9C2", initials: "AR", blurb: "A subscription storefront for a coffee club that ships on roast day.", deliverables: ["Store design and build", "Subscription flow", "Email templates"], result: "Checkout shortened from five steps to two." },
-  { id: "p3", name: "The Quiet Journal", category: "Editorial", year: 2025, hue: "#D8DCE8", initials: "QJ", blurb: "A slow-reading magazine site designed for long essays and quiet margins.", deliverables: ["Editorial templates", "Reading experience", "Archive search"], result: "Average reading time rose from two minutes to seven." },
-  { id: "p4", name: "North Pier Hotels", category: "Web", year: 2026, hue: "#CDE3E6", initials: "NP", blurb: "A direct-booking website for a family-run pair of seaside hotels.", deliverables: ["Website design and build", "Booking flow", "Local SEO setup"], result: "Direct bookings replaced a third of agency bookings in a season." },
-  { id: "p5", name: "Bloom Box Market", category: "E-Commerce", year: 2025, hue: "#F3D9DE", initials: "BB", blurb: "A flower subscription shop with a build-your-own bouquet picker.", deliverables: ["Store design and build", "Bouquet picker", "Gift messaging"], result: "Gift orders became the shop's best-selling line." },
-  { id: "p6", name: "Harbor Legal", category: "Web", year: 2025, hue: "#DDD6C8", initials: "HL", blurb: "A plain-language website for a small law practice that hates jargon.", deliverables: ["Website design and build", "Plain-language rewrite", "Intake form"], result: "Enquiries doubled while phone interruptions fell." },
-  { id: "p7", name: "Studio Marrow", category: "Brand", year: 2024, hue: "#E6D8F0", initials: "SM", blurb: "A bold identity for a furniture workshop built from reclaimed timber.", deliverables: ["Logo and identity", "Workshop signage", "Lookbook"], result: "The workshop's waiting list grew to four months." },
-  { id: "p8", name: "Field & Folk Festival", category: "Editorial", year: 2024, hue: "#F0E3B8", initials: "FF", blurb: "A programme and poster system for a weekend folk festival.", deliverables: ["Poster system", "Printed programme", "Line-up site"], result: "The festival sold out for the first time in six years." },
-  { id: "p9", name: "Copperline Bikes", category: "Web", year: 2024, hue: "#D8E8DC", initials: "CB", blurb: "A service-booking website for a bike repair shop with honest pricing.", deliverables: ["Website design and build", "Repair booking", "Price guide"], result: "Online bookings filled the workshop diary two weeks out." },
+  { id: "p1", name: "Fern Hollow Skincare", category: "Brand", year: 2026, hue: "#DCE8D0", initials: "FH", img: "images/p1.jpg", alt: "Five minimalist skincare jars with patterned labels", blurb: "A calm identity and packaging system for a small-batch skincare maker.", deliverables: ["Logo and identity", "Packaging labels", "Brand guidelines"], result: "Launch range sold out its first small batch in three weeks." },
+  { id: "p2", name: "Atlas Roast Club", category: "E-Commerce", year: 2026, hue: "#EAD9C2", initials: "AR", img: "images/p2.jpg", alt: "Coffee beans being poured from a gold scoop into a cloth bag", blurb: "A subscription storefront for a coffee club that ships on roast day.", deliverables: ["Store design and build", "Subscription flow", "Email templates"], result: "Checkout shortened from five steps to two." },
+  { id: "p3", name: "The Quiet Journal", category: "Editorial", year: 2025, hue: "#D8DCE8", initials: "QJ", img: "images/p3.jpg", alt: "Newspapers and a cup of coffee on a white table", blurb: "A slow-reading magazine site designed for long essays and quiet margins.", deliverables: ["Editorial templates", "Reading experience", "Archive search"], result: "Average reading time rose from two minutes to seven." },
+  { id: "p4", name: "North Pier Hotels", category: "Web", year: 2026, hue: "#CDE3E6", initials: "NP", img: "images/p4.jpg", alt: "White seaside hotel buildings beside a beach and bay", blurb: "A direct-booking website for a family-run pair of seaside hotels.", deliverables: ["Website design and build", "Booking flow", "Local SEO setup"], result: "Direct bookings replaced a third of agency bookings in a season." },
+  { id: "p5", name: "Bloom Box Market", category: "E-Commerce", year: 2025, hue: "#F3D9DE", initials: "BB", img: "images/p5.jpg", alt: "Florist arranging white roses and greenery in a metal vase", blurb: "A flower subscription shop with a build-your-own bouquet picker.", deliverables: ["Store design and build", "Bouquet picker", "Gift messaging"], result: "Gift orders became the shop's best-selling line." },
+  { id: "p6", name: "Harbor Legal", category: "Web", year: 2025, hue: "#DDD6C8", initials: "HL", img: "images/p6.jpg", alt: "Lawyer’s desk with documents, a laptop, and a Lady Justice statue", blurb: "A plain-language website for a small law practice that hates jargon.", deliverables: ["Website design and build", "Plain-language rewrite", "Intake form"], result: "Enquiries doubled while phone interruptions fell." },
+  { id: "p7", name: "Studio Marrow", category: "Brand", year: 2024, hue: "#E6D8F0", initials: "SM", img: "images/p7.jpg", alt: "Person working at a workbench in a furniture workshop", blurb: "A bold identity for a furniture workshop built from reclaimed timber.", deliverables: ["Logo and identity", "Workshop signage", "Lookbook"], result: "The workshop's waiting list grew to four months." },
+  { id: "p8", name: "Field & Folk Festival", category: "Editorial", year: 2024, hue: "#F0E3B8", initials: "FF", img: "images/p8.jpg", alt: "Crowd facing a colorful outdoor festival stage", blurb: "A programme and poster system for a weekend folk festival.", deliverables: ["Poster system", "Printed programme", "Line-up site"], result: "The festival sold out for the first time in six years." },
+  { id: "p9", name: "Copperline Bikes", category: "Web", year: 2024, hue: "#D8E8DC", initials: "CB", img: "images/p9.jpg", alt: "Bicycle mechanic assembling a bicycle in a workshop", blurb: "A service-booking website for a bike repair shop with honest pricing.", deliverables: ["Website design and build", "Repair booking", "Price guide"], result: "Online bookings filled the workshop diary two weeks out." },
 ];
 const CATEGORIES = ["All", "Brand", "Web", "E-Commerce", "Editorial"];
 
@@ -98,7 +98,7 @@ function FilterBar({ cat, setCat, query, setQuery, sort, setSort, count }) {
 function ProjectCard({ p, saved, onSave, onView }) {
   return (
     <article className="card">
-      <div className="art" style={{ background: p.hue }} aria-hidden="true">{p.initials}</div>
+      <div className="art" style={{ background: p.hue }}><img src={p.img} alt={p.alt} loading="lazy" /></div>
       <div className="body">
         <button className="fav" aria-label={"Save " + p.name + " to shortlist"} onClick={() => onSave(p.id)}>{saved ? "★" : "☆"}</button>
         <h3>{p.name}</h3>
@@ -119,6 +119,7 @@ function ProjectModal({ p, saved, onSave, onClose }) {
   return (
     <div className="modalback" onClick={onClose}>
       <div className="modal" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
+        <img className="modalimg" src={p.img} alt={p.alt} />
         <h2>{p.name}</h2>
         <p className="meta">{p.category} · {p.year}</p>
         <p>{p.blurb}</p>
@@ -382,6 +383,7 @@ function App() {
               <div><strong>4</strong> kinds of project</div>
               <div><strong>2 days</strong> reply promise</div>
             </div>
+            <img className="heroimg" src="images/hero.jpg" alt="Design team collaborating around a laptop and sketches in a studio office" />
           </section>
           <main className="wrap">
             <div className="banner">Demo note: this is a React component app running entirely in your browser. Your shortlist and enquiries save in this browser only — no account, no real payment, and the studio is fictional.</div>

@@ -41,4 +41,9 @@ Ink `#141414`, paper `#F4F1EA`, chartreuse `#C8F04B`, warm sand `#E8E2D5`, muted
 - `app.compiled.js` — the same source compiled with esbuild, served live
 - `src/README.md` — how the components map to a split-file React project
 - `styles.css` — the Fieldnotes design system
+- `images/` — real portfolio and studio photography downloaded from Pexels under the Pexels free license
 - `og-image.png` — 1200×627 social preview image in the project palette
+
+## Photography
+
+The hero and portfolio images are real photographs sourced from Pexels and stored locally in `images/` so the live site does not depend on hotlinks.
